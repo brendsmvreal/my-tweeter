@@ -1,0 +1,35 @@
+i {
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  background-color: #4056A1;
+  padding: 30px 1.5em; 
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 22px;
+}
+
+.arrow {
+  color: red;
+  display: flex;
+  justify-content: center;
+
+}
+
+p {
+ margin: 0; 
+}
+
+
+/* span {
+  font-family: "Bungee", "sans-serif";
+} */
