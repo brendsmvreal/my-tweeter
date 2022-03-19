@@ -16,11 +16,21 @@ html {
 
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
   font-size: 28px;
   font-family: "Source Sans Pro", "sans-serif";
   background-color: #f4f1ec;
   background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png");  
+}
+
+.container {
+  width: 90%;
+  background-color: #f4f1ec;
+  background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png"); 
 }
 
 
