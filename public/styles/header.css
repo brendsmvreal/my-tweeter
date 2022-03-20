@@ -8,18 +8,11 @@
   background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png");  
 }
 
-h2 {
+.main-title {
   margin: 0;
+  font-size: 1.5em;
+  color: #3f4e83;
+  font-family: "Fredoka";
+  font-weight: 500;
 }
 
-/* .avatar {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.header-name {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-} */
