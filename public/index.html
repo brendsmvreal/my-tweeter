@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
     
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -25,7 +24,9 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
+
   <body>
     <nav>
       <span style="font-family: Bungee, cursive">tweeter</span>
@@ -49,7 +50,7 @@
         <h2 class="title-tweet">Compose Tweet</h2>
         <form method="POST" action="/tweets" enctype="application/x-www-form-urlencoded">
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <textarea class="textarea" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="tweet-counter" style="font-family: Bungee, cursive">
             <button type="submit" >Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
