@@ -1,0 +1,47 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet {
+  width: 90%;
+  color: black;
+}
+
+button {
+  display: flex;
+  background-color :#4056A1;
+  font-size: 0.8em;
+  color: #FFFFFF;
+  border: none;
+  align-items: center;
+}
+
+textarea {
+  background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png");  
+  background-color: #f4f1ec;
+  border-bottom: 3.5px solid;
+  margin-bottom: 25px;
+  border-bottom-style: groove;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  resize: none;
+  height: 40px;
+  margin-top: 15px;
+  font-size: 0.8em;
+}
+
+.tweet-counter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10px;
+}
+
+.title-tweet {
+  font-size: 1em;
+  margin: 0;
+  padding-top: 40px;
+  font-family: "Fredoka";
+  font-weight: 600;
+}
