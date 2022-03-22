@@ -1,16 +1,16 @@
-i {
-  background-color: white;
-}
-
 nav {
   display: flex;
   background-color: #4056A1;
-  padding: 30px 1.5em; 
   height: 120px;
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  width: 100%;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
 }
 
 .cta {
