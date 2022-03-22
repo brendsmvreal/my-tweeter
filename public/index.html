@@ -29,15 +29,15 @@
 
   <body>
     <nav>
-      <span style="font-family: Bungee, cursive">tweeter</span>
-      <div class="cta">
-      <p><strong>Write</strong> a new tweet</p>
-      <span class="arrow fa-solid fa-angles-down"></span>
-    </div>
+        <span style="font-family: Bungee, cursive">tweeter</span>
+        <div class="cta">
+          <p><strong>Write</strong> a new tweet</p>
+          <span class="arrow fa-solid fa-angles-down"></span>
+        </div>
     </nav>
     <header class="header">
       <br>
-      <div>
+      <div class="image-user">
           <img src="/images/profile-hex.png"> 
       </div>
       <div>
@@ -45,8 +45,8 @@
       </div>
     </header>
     <main class="container">
-      <section class="new-tweet" style="font-family: Fredoka">
-        <br><br><br>
+      <section class="new-tweet" style="font-family: Fredoka, cursive">
+        <br>
         <h2 class="title-tweet">Compose Tweet</h2>
         <form method="POST" action="/tweets" enctype="application/x-www-form-urlencoded">
           <label for="tweet-text"></label>
@@ -56,6 +56,49 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <article>
+          <header>
+            <div class="tweet-user">
+              <div class="user-profile">
+                <img src="https://i.imgur.com/nlhLi3I.png">
+                <span style="margin-left: 0.5em;">Rhoda Jacobs</span>
+              </div>
+              <span class="user-tag">@MrsJacobs</span>
+              </div>
+              <br>
+              <span class="past-tweets">Hello World!</span>
+          </header>
+          <footer>
+            <span>10 days ago</span>
+            <div>
+              <i class="fa-solid fa-flag tweet-icons"></i>
+              <i class="fa-solid fa-retweet icon tweet-icons"></i>
+              <i class="fa-solid fa-heart tweet-icons"></i>
+            </div>
+          </footer>
+        </article>
+        <article>
+          <header>
+            <div class="tweet-user">
+              <div class="user-profile">
+                <img src="https://i.imgur.com/73hZDYK.png/">
+              <span style="margin-left: 0.5em;">Drew</span>
+            </div>
+              <span class="user-tag">@DrewBoy</span>
+            </div>
+            <br>
+            <span class="past-tweets">Hello World!</span>
+          </header>
+          <footer>
+            <span>15 days ago</span>
+            <div>
+              <i class="fa-solid fa-flag tweet-icons"></i>
+              <i class="fa-solid fa-retweet icon tweet-icons"></i>
+              <i class="fa-solid fa-heart tweet-icons"></i>
+            </div>
+          </footer>
+        </article>
+        
       </section> 
     </main>
   </body>
