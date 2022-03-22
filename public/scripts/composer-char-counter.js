@@ -3,11 +3,12 @@ $(document).ready(function() {
   $(".textarea").keyup(function () {
     const textToVal = $(this).val();
     let maxLen = 140 - textToVal.length;
-    $(".counter").html(maxLen);
+    let counter = $(this).parent().find(".counter");
+    counter.val(maxLen)
     if (maxLen < 0) {
-      $(".counter").css('color', 'red') 
+      counter.css('color', 'red') 
     } else {
-      $(".counter").css('color', '');
+      counter.css('color', '');
     }
   });
 });
