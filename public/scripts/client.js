@@ -66,7 +66,14 @@ const createTweetElement = function(tweet) {
 
 renderTweets(data);
 
-// const $tweet = createTweetElement(tweetData);
-// console.log($tweet); // to see what it looks like
-// to add it to the page so we can make sure it's got all the right elements, classes, etc.
-// $('#tweets-container').append($tweet); 
+ 
+$(document).ready(function() { // document.ready make that the code only function when the document is ready
+  $('form').submit(function(event) { // prevents from taking to a next page which was /tweets
+    event.preventDefault();
+    
+    $.ajax('/tweets', {
+      method: "POST",
+      data: $(this).serialize(),
+    });
+  });
+});
