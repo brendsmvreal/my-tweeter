@@ -28,11 +28,10 @@ body {
 }
 
 .container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+  width: 90%;
   background-color: #f4f1ec;
   background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png"); 
+  font-family: 'Fredoka';
 }
 
 .tweet-user {
@@ -47,7 +46,7 @@ article {
   border-style: solid;
   margin-top: 70px;
   padding: 0.5em;
-  
+  color: black;
 }
 
 article:hover {
@@ -97,4 +96,3 @@ header {
  /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
