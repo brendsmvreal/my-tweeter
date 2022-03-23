@@ -4,40 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 tweets.forEach((tweet) => {
   $('#tweets-container').append(createTweetElement(tweet))
-})
-}
+});
+};
 
 const createTweetElement = function(tweet) {
   const $tweet = `<article>
@@ -45,15 +19,15 @@ const createTweetElement = function(tweet) {
     <div class="tweet-user">
       <div class="user-profile">
         <img src="https://i.imgur.com/nlhLi3I.png">
-        <span style="margin-left: 0.5em;">Rhoda Jacobs</span>
+        <span style="margin-left: 0.5em;">${tweet.user.name}</span>
       </div>
-      <span class="user-tag">@MrsJacobs</span>
+      <span class="user-tag">${tweet.user.handle}</span>
       </div>
       <br>
-      <span class="past-tweets">Hello World!</span>
+      <span class="past-tweets">${tweet.content.text}</span>
   </header>
   <footer>
-    <span class="time-ago">10 days ago</span>
+    <span class="time-ago">${timeago.format(tweet.created_at)}</span>
     <div>
       <i class="fa-solid fa-flag tweet-icons"></i>
       <i class="fa-solid fa-retweet icon tweet-icons"></i>
@@ -64,8 +38,14 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
-renderTweets(data);
-
+const loadTweets = function() {
+  $.ajax('/tweets', {
+    method: "GET", // brings the obj as response 
+    dataType: "json", 
+  }).then((response) => { 
+    renderTweets(response)
+  });
+};
  
 $(document).ready(function() { // document.ready make that the code only function when the document is ready
   $('form').submit(function(event) { // prevents from taking to a next page which was /tweets
@@ -76,4 +56,5 @@ $(document).ready(function() { // document.ready make that the code only functio
       data: $(this).serialize(),
     });
   });
+  loadTweets()
 });
