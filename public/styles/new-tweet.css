@@ -4,7 +4,6 @@ form {
 }
 
 .new-tweet {
-  width: 90%;
   color: black;
 }
 
@@ -30,6 +29,7 @@ textarea {
   height: 40px;
   margin-top: 15px;
   font-size: 0.8em;
+
 }
 
 .tweet-counter {
@@ -44,4 +44,9 @@ textarea {
   padding-top: 40px;
   font-family: "Fredoka";
   font-weight: 600;
+}
+
+.time-ago {
+  color: grey;
+  font-style: italic;
 }
