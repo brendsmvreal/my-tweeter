@@ -49,12 +49,19 @@ const loadTweets = function() {
  
 $(document).ready(function() { // document.ready make that the code only function when the document is ready
   $('form').submit(function(event) { // prevents from taking to a next page which was /tweets
-    event.preventDefault();
+    event.preventDefault(); // preventing from going to /tweets
+    let textarea = $('textarea').val();
     
-    $.ajax('/tweets', {
-      method: "POST",
-      data: $(this).serialize(),
-    });
+    if (textarea.length > 140) {
+      alert('Too many characters!');
+    } else if (textarea.length <= 0) {
+      alert('Tweet cannot be empty!') 
+    } else {
+      $.ajax('/tweets', {
+        method: "POST",
+        data: $(this).serialize(),
+      });
+    }
   });
   loadTweets()
 });
