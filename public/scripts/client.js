@@ -9,7 +9,7 @@ const renderTweets = function(tweets) {
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 tweets.forEach((tweet) => {
-  $('#tweets-container').append(createTweetElement(tweet))
+  $('#tweets-container').prepend(createTweetElement(tweet))
 });
 };
 
@@ -18,7 +18,7 @@ const createTweetElement = function(tweet) {
   <header>
     <div class="tweet-user">
       <div class="user-profile">
-        <img src="https://i.imgur.com/nlhLi3I.png">
+        <img src=${tweet.user.avatars}>
         <span style="margin-left: 0.5em;">${tweet.user.name}</span>
       </div>
       <span class="user-tag">${tweet.user.handle}</span>
@@ -42,7 +42,7 @@ const loadTweets = function() {
   $.ajax('/tweets', {
     method: "GET", // brings the obj as response 
     dataType: "json", 
-  }).then((response) => { 
+  }).then((response) => { // success 
     renderTweets(response)
   });
 };
@@ -59,9 +59,15 @@ $(document).ready(function() { // document.ready make that the code only functio
     } else {
       $.ajax('/tweets', {
         method: "POST",
-        data: $(this).serialize(),
+        data: $(this).serialize(), // data as query 
+      }).then(() => {
+        $.get('/tweets', (serverResponse) => {
+          const newTweet = [serverResponse.slice(-1).pop()];
+          renderTweets(newTweet);
+          // console.log('serverResponse:', serverResponse);
+        });
       });
-    }
+    };
   });
   loadTweets()
 });
