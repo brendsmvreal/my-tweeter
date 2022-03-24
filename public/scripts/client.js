@@ -14,20 +14,25 @@ tweets.forEach((tweet) => {
 };
 
 const createTweetElement = function(tweet) {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   const $tweet = `<article>
   <header>
     <div class="tweet-user">
       <div class="user-profile">
-        <img src=${tweet.user.avatars}>
-        <span style="margin-left: 0.5em;">${tweet.user.name}</span>
+        <img src=${escape(tweet.user.avatars)}>
+        <span style="margin-left: 0.5em;">${escape(tweet.user.name)}</span>
       </div>
-      <span class="user-tag">${tweet.user.handle}</span>
+      <span class="user-tag">${escape(tweet.user.handle)}</span>
       </div>
       <br>
-      <span class="past-tweets">${tweet.content.text}</span>
+      <span class="past-tweets">${escape(tweet.content.text)}</span>
   </header>
   <footer>
-    <span class="time-ago">${timeago.format(tweet.created_at)}</span>
+    <span class="time-ago">${escape(timeago.format(tweet.created_at))}</span>
     <div>
       <i class="fa-solid fa-flag tweet-icons"></i>
       <i class="fa-solid fa-retweet icon tweet-icons"></i>
