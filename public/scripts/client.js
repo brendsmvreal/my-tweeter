@@ -56,16 +56,22 @@ $(document).ready(function() { // document.ready make that the code only functio
   $('form').submit(function(event) { // prevents from taking to a next page which was /tweets
     event.preventDefault(); // preventing from going to /tweets
     let textarea = $('textarea').val();
-    
+
     if (textarea.length > 140) {
-      alert('Too many characters!');
+      const errorMsg = $(this).parent().find(".long-text-area");
+      errorMsg.css('visibility', 'visible').slideDown(200).fadeOut(3000);
+
     } else if (textarea.length <= 0) {
-      alert('Tweet cannot be empty!') 
+      const errorMsg = $(this).parent().find(".empty-error-msg");
+      errorMsg.css('visibility', 'visible').slideDown(200).fadeOut(3000);
+      
     } else {
       $.ajax('/tweets', {
         method: "POST",
         data: $(this).serialize(), // data as query 
       }).then(() => {
+        $('textarea').val(''); // remove text from textarea
+        $('output').text(140); // reset the counter to 140 
         $.get('/tweets', (serverResponse) => {
           const newTweet = [serverResponse.slice(-1).pop()];
           renderTweets(newTweet);
