@@ -75,7 +75,6 @@ $(document).ready(function() { // document.ready make that the code only functio
         $.get('/tweets', (serverResponse) => {
           const newTweet = [serverResponse.slice(-1).pop()];
           renderTweets(newTweet);
-          // console.log('serverResponse:', serverResponse);
         });
       });
     };
