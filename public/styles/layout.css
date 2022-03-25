@@ -47,6 +47,8 @@ article {
   margin-top: 70px;
   padding: 0.5em;
   color: black;
+  background-color: #f4f1ec;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");;  
 }
 
 article:hover {
@@ -78,7 +80,7 @@ header {
   color: #4057a19b;
 }
 .tweet-icons {
-  background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png");  
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 .tweet-icons:hover {
@@ -93,6 +95,18 @@ header {
   margin-top: 90px;
 }
 
+.long-text-area, .empty-error-msg {
+  color:  rgb(224, 60, 60);
+  border-style: solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f4f1ec;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
  /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
