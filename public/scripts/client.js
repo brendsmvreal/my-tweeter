@@ -8,13 +8,13 @@ const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
-tweets.forEach((tweet) => {
-  $('#tweets-container').prepend(createTweetElement(tweet))
-});
+  tweets.forEach((tweet) => {
+    $('#tweets-container').prepend(createTweetElement(tweet));
+  });
 };
 
 const createTweetElement = function(tweet) {
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -41,14 +41,14 @@ const createTweetElement = function(tweet) {
   </footer>
 </article>`;
   return $tweet;
-}
+};
 
 const loadTweets = function() {
   $.ajax('/tweets', {
-    method: "GET", // brings the obj as response 
-    dataType: "json", 
-  }).then((response) => { // success 
-    renderTweets(response)
+    method: "GET", // brings the obj as response
+    dataType: "json",
+  }).then((response) => { // success
+    renderTweets(response);
   });
 };
  
@@ -68,16 +68,16 @@ $(document).ready(function() { // document.ready make that the code only functio
     } else {
       $.ajax('/tweets', {
         method: "POST",
-        data: $(this).serialize(), // data as query 
+        data: $(this).serialize(), // data as query
       }).then(() => {
         $('textarea').val(''); // remove text from textarea
-        $('output').text(140); // reset the counter to 140 
+        $('output').text(140); // reset the counter to 140
         $.get('/tweets', (serverResponse) => {
           const newTweet = [serverResponse.slice(-1).pop()];
           renderTweets(newTweet);
         });
       });
-    };
+    }
   });
-  loadTweets()
+  loadTweets();
 });
