@@ -16,7 +16,6 @@ button {
 }
 
 textarea {
-  background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png");  
   background-color: #f4f1ec;
   border-bottom: 3.5px solid;
   margin-bottom: 25px;
@@ -48,4 +47,10 @@ textarea {
 .time-ago {
   color: grey;
   font-style: italic;
+}
+
+@media only screen and (min-width: 1024px) {
+  .title-tweet {
+    padding: 0;
+  }
 }
