@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  background-color: #4056A1;
+  background-color:  rgb(230, 154, 14);
   height: 120px;
   flex-direction: row;
   justify-content: space-between;
@@ -10,6 +10,7 @@ nav {
   position: fixed; 
   top: 0; 
   width: 100%; 
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 .cta {
@@ -28,4 +29,10 @@ nav {
 
 p {
  margin: 0; 
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
 }
