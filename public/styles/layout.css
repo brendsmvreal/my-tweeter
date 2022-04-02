@@ -23,14 +23,14 @@ body {
   font-size: 28px;
   font-family: "Source Sans Pro", "sans-serif";
   background-color: #f4f1ec;
-  background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png");  
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   margin-bottom: 50px;
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   background-color: #f4f1ec;
-  background-image: url("https://www.transparenttextures.com/patterns/silver-scales.png"); 
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   font-family: 'Fredoka';
 }
 
@@ -66,11 +66,6 @@ footer {
 
 }
 
-header {
-  margin-bottom: 0.1em;
-  padding: 10px;
-}
-
 .user-profile {
   display: flex;
   align-items: center;
@@ -89,6 +84,7 @@ header {
 
 .past-tweets {
   font-size: 0.8em;
+  word-wrap: break-word;
 }
 
 .image-user {
@@ -107,6 +103,26 @@ header {
   background-color: #f4f1ec;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
+
+.style-min {
+  width: 90%;
+  margin-left: 5%;
+
+}
  /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+  }
+  .image-user {
+    margin-top: 0;
+  }
+  .style-min {
+    width: 50%;
+    margin-right: 5%;
+  }
+}
